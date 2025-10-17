@@ -44,4 +44,24 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "rubocop", require: false            # Linting & formatting
+  gem "rubocop-rails", require: false      # Rails-specific rules
+  gem "solargraph"                         # Language server for Ruby
+  gem "ruby-lsp", require: false           # Ruby LSP for editor integration
+  gem "ruby-lsp-rails", require: false     # Rails extras for Ruby LSP
+
+  gem "pry"
+  gem "pry-byebug"
+
+  gem "sorbet"
+  gem "sorbet-runtime"
+
+  gem "tapioca", "~> 0.17"
+
+  gem "rspec-rails"                      # RSpec for Rails
+  gem "factory_bot_rails"
+  gem "rswag-specs"
+  gem "rswag-api"
+  gem "rswag-ui"
 end
