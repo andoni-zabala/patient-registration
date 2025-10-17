@@ -65,3 +65,7 @@ group :development, :test do
   gem "rswag-api"
   gem "rswag-ui"
 end
+
+gem "ruby_parser", "~> 3.21"
+
+gem "webrick", "~> 1.9"
