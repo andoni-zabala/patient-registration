@@ -19,7 +19,7 @@ class AbstractBaseRepository
     raise_error(__method__)
   end
 
-  sig { overridable.params(dto: IdDto).returns(T.nilable(Entity)) }
+  sig { overridable.params(dto: ::IdDto).returns(T.nilable(Entity)) }
   def find(dto:)
     raise_error(__method__)
   end
