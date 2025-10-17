@@ -6,6 +6,6 @@ class PatientEntity < T::Struct
   const :id, Integer
   const :name, String
   const :email, String
-  const :phone_number, String
-  const :document_photo_url, String
+  const :phone_number, T.nilable(String)
+  const :document_photo_url, T.nilable(String)
 end

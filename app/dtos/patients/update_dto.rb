@@ -6,7 +6,6 @@ module Patients
 
     const :name, T.nilable(String)
     const :email, T.nilable(String)
-    const :address, T.nilable(String)
     const :phone_number, T.nilable(String)
   end
 end

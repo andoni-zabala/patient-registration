@@ -10,7 +10,10 @@ class PatientsRepository < AbstractBaseRepository
 
   sig { override.params(dto: Patients::ReadDto).returns(T::Array[Entity]) }
   def read(dto:)
-    patients = Patient.with_titles_like(dto.titles)
+    patients = Patient.all
+    patients = patients.by_name(dto.name) if dto.name
+    patients = patients.by_email(dto.email) if dto.email
+    patients = patients.where(phone: dto.phone_number) if dto.phone_number
 
     patients.map do |patient|
       to_entity(patient: patient)
@@ -24,14 +27,7 @@ class PatientsRepository < AbstractBaseRepository
     PatientEntity.new(
       id: patient.id,
       name: patient.name,
-      email: patient.email,
-      phone_number: patient.phone_number,
-      document_photo_url: patient.document_photo_url
+      email: patient.email
     )
-  end
-
-  sig { params(id: Integer).returns(T.nilable(Community)) }
-  def community_by_id(id:)
-    Community.find_by(id: id)
   end
 end
